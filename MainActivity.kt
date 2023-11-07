@@ -38,6 +38,16 @@ fun Greeting(name: String, color: Color, modifier: Modifier = Modifier) {
         color = color,
         modifier = modifier
     )
+    Text(
+        text = "Bonjour $name!",
+        color = color,
+        modifier = modifier
+    )
+    Text(
+        text = "Bonjour $name!",
+        color = color,
+        modifier = modifier
+    )
 }
 
 @Preview(showBackground = true)
