@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
@@ -17,12 +18,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
-                // Un conteneur de surface utilisant la couleur de fond du thème
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting("Android", Color.Red) // Couleur Rouge
+                    Greeting("Kotlin", Color.Green) // Couleur Verte
+                    Greeting("Compose", Color.Blue) // Couleur Bleue
                 }
             }
         }
@@ -30,9 +32,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(name: String, color: Color, modifier: Modifier = Modifier) {
     Text(
         text = "Bonjour $name!",
+        color = color,
         modifier = modifier
     )
 }
@@ -41,6 +44,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
-        Greeting("Android")
+        Greeting("Android", Color.Red)
     }
 }
+
